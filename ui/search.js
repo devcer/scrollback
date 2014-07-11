@@ -2,33 +2,37 @@
 /* global $, libsb */
 
 $(function() {
+    var $body = $("body"),
+        $searchButton = $(".search-button"),
+        $searchEntry = $(".search-entry");
+
     // Show and hide search bar
     function showSearchBar() {
-        $("body").addClass("search-focus");
+        $body.addClass("search-focus");
         // Use a timeout to add focus to avoid double animation in firefox
         setTimeout(function() {
-            $(".search-entry").focus().data("search-ready", true);
+            $searchEntry.focus().data("search-ready", true);
         }, 300);
     }
 
     function hideSearchBar() {
-        $("body").removeClass("search-focus");
-        $(".search-entry").data("search-ready", false);
+        $body.removeClass("search-focus");
+        $searchEntry.data("search-ready", false);
     }
 
-    $(".search-button").on("click", showSearchBar);
+    $searchButton.on("click", showSearchBar);
 
     $(document).on("click", function(e) {
-        if (!$(e.target).closest(".search-entry").length && $(".search-entry").data("search-ready")) {
+        if (!$(e.target).closest(".search-entry").length && $searchEntry.data("search-ready")) {
             hideSearchBar();
         }
     });
 
-    $(".search-entry").keypress(function(e) {
+    $searchEntry.keypress(function(e) {
         if (e.which === 13) {
             hideSearchBar();
             e.preventDefault();
-            libsb.emit('navigate', {view: "meta", mode: "search", tab: "search-local", query: $(".search-entry").val()});
+            libsb.emit('navigate', {view: "meta", mode: "search", tab: "search-local", query: $searchEntry.val()});
         }
     });
 });

@@ -12,6 +12,7 @@
 @import "tooltip";
 @import "progress";
 @import "tip";
+@import "cards";
 
 $screenx: "only screen and (min-width: 18em)";
 $screenxx: "only screen and (min-width: 27em)";
@@ -640,6 +641,13 @@ body {
 
         .embed & { left: $width-metaxxxx; }
     }
+}
+
+.home-area {
+    width: 100%;
+    min-height: 100%;
+    background-color: darken($light-color, 5%);
+    color: $dark-color;
 }
 
 .meta-button, .rooms-button {

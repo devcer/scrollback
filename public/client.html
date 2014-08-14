@@ -44,7 +44,7 @@
 			</div>
 		</div>
 		<![endif]-->
-		<section data-embed="none" class="room-area column">
+		<section data-mode="normal search conf pref noroom" data-embed="none" class="room-area column">
 			<div class="room-header">
 				<a href="http://scrollback.io" target="_blank"><img src="/s/img/client/scrollback-small.svg" alt="scrollback"></a>
 			</div>
@@ -53,7 +53,7 @@
 				<a class="room-item"><span class="room-name"></span><span class="notif-counter unread"></span></a>
 			</div>
 		</section>
-		<section class="meta-area column">
+		<section data-mode="normal search conf pref" class="meta-area column">
 			<ul role="tablist" class="meta-tabs">
 				<li data-embed="none" role="tab" class="rooms-button">
 					<svg class="rooms-icon" width="28" height="28" viewBox="0 0 28 28">
@@ -118,8 +118,8 @@
 				<a class="list-item"></a>
 			</div>
 		</section>
-		<main role="main" class="main-area column">
-			<div data-mode="normal search conf pref" class="title-bar">
+		<main role="main" data-mode="normal search conf pref" class="main-area column">
+			<div class="title-bar">
 				<div class="left-area">
 					<a class="meta-button">
 						<span data-embed="toast canvas" class="meta-button-logo">
@@ -188,6 +188,11 @@
 					</div>
 				</div>
 			</div>
+			<div data-mode="normal search" class="search-bar">
+				<form>
+					<input class="search-entry" type="search" placeholder="Type to search...">
+				</form>
+			</div>
 			<div data-mode="normal search" class="content-area">
 				<div class="chat-position"></div>
 				<div class="chat-area hide-scroll">
@@ -200,10 +205,8 @@
 					</p>
 				</div>
 			</div>
-			<div data-mode="conf" class="conf-area">
-			</div>
-			<div data-mode="pref" class="pref-area">
-			</div>
+			<div data-mode="conf" class="conf-area"></div>
+			<div data-mode="pref" class="pref-area"></div>
 			<div data-mode="normal search" class="chat-input">
 				<div class="chat-entry-wrap">
 					<div class="chat-conv-dot-wrap">
@@ -217,10 +220,8 @@
 				</svg>
 			</div>
 		</main>
-		<section class="search-bar">
-			<form>
-				<input class="search-entry" type="search" placeholder="Type to search...">
-			</form>
+		<section data-mode="home" class="home-area">
+			<div class="card-container"></div>
 		</section>
 		<section data-mode="noroom offline profile" class="content-view-wrapper">
 			<div data-mode="noroom" class="content-view-area">
@@ -282,7 +283,7 @@
 		<script src="https://login.persona.org/include.js"></script>
 
         <!-- SEO -->
-        <div style="margin-left: -99999px; text-indent: -99999px;" >
+        <div style="position: absolute; top: -99999px; left: -99999px;" >
             <!-- Messages starts here. -->
             <!--Messages end here-->
         </div>

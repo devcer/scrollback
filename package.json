@@ -48,7 +48,7 @@
     "connect-redis": "1.4.6",
     "cookie": "latest",
     "elasticsearch": "^2.3.0",
-    "express": "3.0.x",
+    "express": "4.17.x",
     "generic-pool": "latest",
     "htmlencode": "0.0.3",
     "irc": "git://github.com/scrollback/node-irc.git",
